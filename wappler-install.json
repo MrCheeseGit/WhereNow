@@ -1,0 +1,33 @@
+{
+  "schema": 1,
+  "id": "where-now",
+  "name": "Where Now",
+  "version": "0.1.0",
+  "cloneDir": "whereNow",
+  "hasServerConnect": true,
+  "hasAppConnect": false,
+  "readme": "https://github.com/MrCheeseGit/whereNow#installation",
+  "serverConnect": {
+    "directories": [
+      "extensions/server_connect/modules",
+      "lib/modules"
+    ],
+    "copy": [
+      {
+        "src": "server_connect/modules/whereNow_now.hjson",
+        "dest": "extensions/server_connect/modules/whereNow_now.hjson"
+      },
+      {
+        "src": "server_connect/modules/whereNow.js",
+        "dest": "lib/modules/whereNow.js"
+      }
+    ],
+    "notes": [
+      "Copy whereNow.js to lib/modules/.",
+      "npm: add wappler-where-now to package.json devDependencies (file:../Server-Connect/Extensions/whereNow) and run npm install.",
+      "Register wappler-where-now in .wappler/project.json extensions if the Server Connect step picker stays empty.",
+      "ConnectBench .cbext installs perform manifest copy + npm registration automatically.",
+      "Quit Wappler completely (including tray) and reopen after install."
+    ]
+  }
+}

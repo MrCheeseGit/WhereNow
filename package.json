@@ -1,0 +1,29 @@
+{
+  "name": "wappler-where-now",
+  "version": "0.1.0",
+  "description": "Wappler Server Connect extension for current local date/time in a dynamic IANA timezone",
+  "main": "server_connect/modules/whereNow.js",
+  "homepage": "https://www.mrcheese.co.uk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrCheeseGit/WhereNow.git"
+  },
+  "keywords": [
+    "wappler",
+    "wappler-extension",
+    "server-connect",
+    "timezone",
+    "iana",
+    "datetime",
+    "local-time",
+    "dst",
+    "where-now",
+    "mrcheese"
+  ],
+  "author": "Mr Cheese",
+  "license": "SEE LICENSE IN LICENSE",
+  "wappler": {
+    "module": "whereNow",
+    "version": "0.1.0"
+  }
+}

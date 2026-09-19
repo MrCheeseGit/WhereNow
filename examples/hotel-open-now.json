@@ -1,0 +1,31 @@
+{
+  "name": "Hotel open-now filter (outline)",
+  "steps": [
+    {
+      "type": "database",
+      "title": "Get Hotel",
+      "note": "Returns hotel.timezone (IANA), e.g. America/Tijuana"
+    },
+    {
+      "type": "whereNow_now",
+      "title": "Where Now",
+      "options": {
+        "timezone": "{{hotel.timezone}}",
+        "fallbackTimezone": "UTC"
+      },
+      "outputs": [
+        "localDate",
+        "localTime",
+        "hour",
+        "minute",
+        "dayOfWeek",
+        "isValidTimezone"
+      ]
+    },
+    {
+      "type": "database",
+      "title": "Get Open Restaurants",
+      "note": "Filter where open_from <= {{whereNow.localTime}} and close_after >= {{whereNow.localTime}} using hours stored in local time for that venue"
+    }
+  ]
+}

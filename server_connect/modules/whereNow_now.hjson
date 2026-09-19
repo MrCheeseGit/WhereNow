@@ -1,0 +1,146 @@
+{
+  "type": "whereNow_now",
+  "module": "whereNow",
+  "action": "now",
+  "groupTitle": "Mr Cheese",
+  "groupIcon": "fas fa-lg fa-cheese comp-exec",
+  "title": "Where Now",
+  "icon": "fas fa-lg fa-clock comp-data",
+  "outputType": "object",
+  "help": "Current date and time in a dynamic IANA timezone (DST-safe). Bind timezone from a database query such as {{hotel.timezone}}. Outputs localDate, localTime, hour, minute, and dayOfWeek for open-hours filtering.",
+  "dataScheme": [
+    {
+      "name": "success",
+      "type": "boolean"
+    },
+    {
+      "name": "timezone",
+      "type": "text"
+    },
+    {
+      "name": "requestedTimezone",
+      "type": "text"
+    },
+    {
+      "name": "isValidTimezone",
+      "type": "boolean"
+    },
+    {
+      "name": "usedFallback",
+      "type": "boolean"
+    },
+    {
+      "name": "locale",
+      "type": "text"
+    },
+    {
+      "name": "localDate",
+      "type": "text"
+    },
+    {
+      "name": "localTime",
+      "type": "text"
+    },
+    {
+      "name": "localTimeSeconds",
+      "type": "text"
+    },
+    {
+      "name": "localDateTime",
+      "type": "text"
+    },
+    {
+      "name": "hour",
+      "type": "number"
+    },
+    {
+      "name": "minute",
+      "type": "number"
+    },
+    {
+      "name": "second",
+      "type": "number"
+    },
+    {
+      "name": "dayOfWeek",
+      "type": "number"
+    },
+    {
+      "name": "weekday",
+      "type": "text"
+    },
+    {
+      "name": "offsetLabel",
+      "type": "text"
+    },
+    {
+      "name": "isoUtc",
+      "type": "text"
+    },
+    {
+      "name": "unixMs",
+      "type": "number"
+    }
+  ],
+  "dataPickObject": true,
+  "properties": [
+    {
+      "group": "Settings",
+      "variables": [
+        {
+          "name": "actionName",
+          "optionName": "name",
+          "title": "Name",
+          "type": "text",
+          "required": true,
+          "defaultValue": "",
+          "baseName": "whereNow",
+          "help": "Step name for bindings (e.g. {{whereNow.localTime}}, {{whereNow.localDate}})"
+        },
+        {
+          "name": "actionOutput",
+          "optionName": "output",
+          "title": "Output",
+          "type": "boolean",
+          "initValue": true,
+          "defaultValue": false,
+          "help": "Expose results in the API response and App Connect picker"
+        },
+        {
+          "name": "timezone",
+          "optionName": "timezone",
+          "title": "IANA timezone",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Bind from a prior step, e.g. {{hotel.timezone}} or America/Tijuana. Empty or invalid values use Fallback timezone."
+        },
+        {
+          "name": "fallbackTimezone",
+          "optionName": "fallbackTimezone",
+          "title": "Fallback timezone",
+          "type": "text",
+          "defaultValue": "UTC",
+          "help": "Used when IANA timezone is empty or invalid."
+        },
+        {
+          "name": "locale",
+          "optionName": "locale",
+          "title": "Locale",
+          "type": "text",
+          "defaultValue": "en-CA",
+          "help": "Intl locale for date parts (en-CA gives YYYY-MM-DD ordering in localDate)."
+        },
+        {
+          "name": "reference",
+          "optionName": "reference",
+          "title": "Reference instant (optional)",
+          "type": "text",
+          "serverDataBindings": true,
+          "defaultValue": "",
+          "help": "Leave empty for now. Bind an ISO date/time to test a fixed instant instead of the current server time."
+        }
+      ]
+    }
+  ]
+}
