@@ -6,7 +6,7 @@
   "cloneDir": "whereNow",
   "hasServerConnect": true,
   "hasAppConnect": false,
-  "readme": "https://github.com/MrCheeseGit/whereNow#installation",
+  "readme": "https://github.com/MrCheeseGit/WhereNow#installation",
   "serverConnect": {
     "directories": [
       "extensions/server_connect/modules",
